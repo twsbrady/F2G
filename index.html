@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
 <title>Fuel2Go — Diesel That Goes Further | Fuel and Additive Delivery Across Australia and NZ</title>
 <meta name="description" content="Fuel2Go delivers additive-treated diesel to transport, construction and mining operations across Australia and New Zealand. Cleaner burn, more kilometres per tank.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -49,14 +50,6 @@ img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 .mono{font-family:'IBM Plex Mono',monospace}
 
-/* ============ LOADER (non-blocking chip — the poster shows behind it) ============ */
-#loader{position:fixed;inset:0;background:var(--film-deep);z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;transition:opacity .8s ease, visibility .8s}
-#loader.done{opacity:0;visibility:hidden}
-#loader img{width:180px;filter:drop-shadow(0 0 24px rgba(232,163,61,.25))}
-#loadbar{width:min(320px,70vw);height:2px;background:rgba(244,243,239,.12);overflow:hidden}
-#loadbar i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--gold),var(--gold-hot));transition:width .25s ease}
-#loadpct{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.28em;color:var(--silver)}
-
 /* ============ HEADER ============ */
 header{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px clamp(20px,4vw,44px) 18px clamp(22px,6vw,90px);display:flex;align-items:center;justify-content:space-between;color:#fff;transition:color .4s ease}
 header::before{content:"";position:absolute;inset:0 0 auto 0;height:190%;z-index:-1;background:linear-gradient(to bottom,rgba(5,8,24,.66),rgba(5,8,24,0));pointer-events:none;transition:opacity .4s ease}
@@ -82,8 +75,8 @@ header.on-light .head-phone{text-shadow:none}
 @keyframes cue{0%,100%{transform:rotate(45deg) translate(0,0);opacity:.55}50%{transform:rotate(45deg) translate(4px,4px);opacity:1}}
 
 /* ============ FILM ============ */
-#film-scroll{position:relative;height:965vh}
-#stage{position:sticky;top:0;height:100vh;overflow:hidden;background:var(--film-deep) url('assets/film2/f_0001.jpg?v=24') center/cover no-repeat}
+#film-scroll{position:relative;height:440vh}
+#stage{position:sticky;top:0;height:100vh;overflow:hidden;background:var(--film-deep) url('assets/film2/f_0294.jpg?v=24') center/cover no-repeat}
 #film{position:absolute;inset:0;width:100%;height:100%}
 #grain{position:absolute;inset:0;pointer-events:none;opacity:.5;mix-blend-mode:overlay}
 #vignette{position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 50% 45%,transparent 55%,rgba(3,5,16,.52) 100%)}
@@ -135,34 +128,36 @@ header.on-light .head-phone{text-shadow:none}
    Heading sits beside the table, not above it, so the section stays
    short. Below 860px each row folds into label / test / value. */
 #proof{background:var(--ink);color:var(--ivory);min-height:0;padding:clamp(48px,6.5vh,78px) clamp(22px,6vw,90px)}
-#proof .kick-c{color:var(--gold-hot)}
+#proof .kick-c{color:var(--silver)}
 #proof .wrap-c{min-width:0}   /* flex child must be allowed to shrink under the table */
 #proof .display{font-size:clamp(34px,4.2vw,60px)}
 #proof .lede{color:rgba(244,243,239,.8);max-width:44ch;margin-top:16px;font-size:16px}
 .proof-grid{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:clamp(26px,4.5vw,72px);align-items:center}
 .proof-intro .lede{margin-top:18px}
 .proof-src{margin-top:22px;padding-top:16px;border-top:1px solid rgba(244,243,239,.16);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,243,239,.48)}
-.proof-table{width:100%;border-collapse:collapse}
+.proof-table{width:100%;border-collapse:separate;border-spacing:0}
 .proof-table caption{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .proof-table thead th{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(244,243,239,.55);font-weight:500;text-align:left;padding:0 0 12px;border-bottom:1px solid rgba(244,243,239,.3)}
 .proof-table thead th.num{text-align:right;padding-left:18px}
 .proof-table thead th.test{padding-left:clamp(16px,2.4vw,36px)}
-.proof-table td{padding:11px 0;border-bottom:1px solid rgba(244,243,239,.1);vertical-align:middle}
+.proof-table td{padding:14px 0;vertical-align:middle;box-shadow:inset 0 1px 0 rgba(255,255,255,.07);background:linear-gradient(180deg,rgba(255,255,255,.028),rgba(255,255,255,0))}
+.proof-table td:last-child{padding-right:14px}
 .proof-table td.test{padding-left:clamp(16px,2.4vw,36px)}
-.proof-table tbody tr:last-child td{border-bottom:0}
-.proof-table tbody th.proof-what{font-family:'Archivo',sans-serif;font-size:15px;letter-spacing:normal;text-transform:none;font-weight:400;text-align:left;color:var(--ivory);position:relative;padding:11px 0;border-bottom:1px solid rgba(244,243,239,.1)}
-.proof-table tbody tr:last-child th.proof-what{border-bottom:0}
+.proof-table tbody th.proof-what{font-family:'Archivo',sans-serif;font-size:15px;letter-spacing:normal;text-transform:none;font-weight:400;text-align:left;color:var(--ivory);position:relative;padding:14px 0 14px 14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.07);background:linear-gradient(180deg,rgba(255,255,255,.028),rgba(255,255,255,0))}
 .proof-table td.num{text-align:right;white-space:nowrap;padding-left:18px}
-.proof-val{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-style:italic;font-size:clamp(25px,2.5vw,34px);line-height:1;color:var(--gold-hot);letter-spacing:.01em}
+/* Flat silver. A gradient ramp puts a visible horizon line through the middle of
+   each numeral, so this is a single solid tone lifted a step above the logo
+   keyline grey (--silver #A7A9AC) to carry at this size on the navy. */
+.proof-val{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-style:italic;font-size:clamp(25px,2.5vw,34px);line-height:1;letter-spacing:.01em;color:#C6CACE}
+.proof-table tbody tr:hover .proof-val{color:#DDE1E5}
+.proof-table tbody tr:hover td,.proof-table tbody tr:hover th.proof-what{background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.012))}
 .proof-test{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.05em;color:rgba(244,243,239,.6);line-height:1.45}
-.proof-table tr.is-key td{background:rgba(232,163,61,.07)}
-.proof-table tr.is-key td:first-child{box-shadow:inset 3px 0 0 var(--gold)}
-.proof-table tr.is-key .proof-what{padding-left:14px;font-weight:500}
-.proof-table tr.is-key .proof-val{color:var(--gold)}
-.proof-table tr.is-key td:last-child{padding-right:14px}
+.proof-table tr.is-key td,.proof-table tr.is-key th.proof-what{background:linear-gradient(180deg,rgba(214,222,232,.13),rgba(214,222,232,.03));box-shadow:inset 0 1px 0 rgba(255,255,255,.34),inset 0 -1px 0 rgba(0,0,0,.4)}
+.proof-table tr.is-key th.proof-what{font-weight:500;box-shadow:inset 0 1px 0 rgba(255,255,255,.34),inset 0 -1px 0 rgba(0,0,0,.4),inset 3px 0 0 0 rgba(233,236,240,.9)}
+.proof-table tr.is-key .proof-val{color:#F2F4F6;text-shadow:0 0 18px rgba(214,222,232,.3)}
 .proof-foot{margin-top:20px;font-size:13.5px;line-height:1.6;color:rgba(244,243,239,.6);max-width:60ch}
-.proof-foot a{color:var(--gold-hot);text-decoration:none;border-bottom:1px solid rgba(245,193,94,.45)}
-.proof-foot a:hover{border-bottom-color:var(--gold-hot)}
+.proof-foot a{color:#DCE0E4;text-decoration:none;border-bottom:1px solid rgba(220,224,228,.45)}
+.proof-foot a:hover{color:var(--white);border-bottom-color:var(--white)}
 @media (max-width:860px){
   .proof-grid{grid-template-columns:minmax(0,1fr);gap:26px}
   .proof-table,.proof-table tbody{display:block;width:100%}
@@ -170,12 +165,12 @@ header.on-light .head-phone{text-shadow:none}
   .proof-table thead{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
   .proof-table tbody tr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px clamp(14px,4vw,24px);padding:13px 0;border-bottom:1px solid rgba(244,243,239,.1)}
   .proof-table tbody tr:last-child{border-bottom:0}
-  .proof-table td,.proof-table tbody th.proof-what{border:0;padding:0}
+  .proof-table td,.proof-table tbody th.proof-what{border:0;padding:0;box-shadow:none;background:none}
   .proof-table th.what{grid-column:1;grid-row:1}
   .proof-table td.test{grid-column:1;grid-row:2;padding-left:0}
   .proof-table td.num{grid-column:2;grid-row:1/span 2;align-self:center;padding-left:0}
-  .proof-table tr.is-key{background:rgba(232,163,61,.07);box-shadow:inset 3px 0 0 var(--gold)}
-  .proof-table tr.is-key td{background:none;box-shadow:none}
+  .proof-table tr.is-key{background:linear-gradient(180deg,rgba(214,222,232,.13),rgba(214,222,232,.03));box-shadow:inset 0 1px 0 rgba(255,255,255,.34),inset 3px 0 0 0 rgba(233,236,240,.9)}
+  .proof-table tr.is-key td,.proof-table tr.is-key th.proof-what{background:none;box-shadow:none}
   .proof-table tr.is-key td:last-child{padding-right:12px}
 }
 
@@ -850,7 +845,7 @@ footer{background:var(--film-deep);color:var(--ivory);padding:70px clamp(22px,6v
 @media (max-width:920px){
   .head-phone{display:none}
   .beat--finale{bottom:10vh}
-  #film-scroll{height:857vh}
+  #film-scroll{height:390vh}
 }
 @media (max-width:560px) and (orientation: portrait){
   .beat--hero,.beat--left{top:13vh;transform:none}
@@ -875,12 +870,6 @@ footer{background:var(--film-deep);color:var(--ivory);padding:70px clamp(22px,6v
 </head>
 <body>
 
-<div id="loader">
-  <img src="assets/logo-white.png" alt="Fuel 2 Go">
-  <div id="loadbar"><i></i></div>
-  <div id="loadpct">0%</div>
-</div>
-
 <header id="header">
   <a class="brand" href="#"><img src="assets/logo.png" alt="Fuel 2 Go"></a>
   <div class="head-right">
@@ -889,7 +878,7 @@ footer{background:var(--film-deep);color:var(--ivory);padding:70px clamp(22px,6v
   </div>
 </header>
 
-<div id="readout"><span class="ch" id="ch-label">01 — THE DROP</span><span class="bar"><i id="ch-bar"></i></span></div>
+<div id="readout"><span class="ch" id="ch-label">01 — THE ROAD</span><span class="bar"><i id="ch-bar"></i></span></div>
 <div id="scrollcue">Scroll</div>
 
 <div id="film-scroll">
@@ -898,30 +887,9 @@ footer{background:var(--film-deep);color:var(--ivory);padding:70px clamp(22px,6v
     <canvas id="grain"></canvas>
     <div id="vignette"></div>
 
-    <div class="beat beat--hero" data-in="-0.1" data-peak="0" data-out="0.07">
+    <div class="beat beat--hero" data-in="-0.1" data-peak="0" data-out="2">
       <h2>One drop in<br>every litre.</h2>
       <p>Fuel2Go Diesel Additive, blended into every delivery of diesel we make across Australia and New Zealand.</p>
-    </div>
-
-    <div class="beat beat--left" data-in="0.15" data-peak="0.23" data-out="0.33">
-      <div class="kick">Delivered treated</div>
-      <h2>Your tank, filled.<br>Nothing to run.</h2>
-      <p>We supply the tank, deliver the diesel and dose the additive into every fill. It sits where your trucks park, on its own power.</p>
-    </div>
-
-    <div class="beat beat--left" data-in="0.60" data-peak="0.69" data-out="0.80">
-      <div class="kick">On the road</div>
-      <h2>Loaded, treated,<br>rolling.</h2>
-      <p>Every delivery leaves the depot already dosed at the tank. Nothing for your driver to carry, nothing to remember.</p>
-    </div>
-
-    <div class="beat beat--finale" data-in="0.88" data-peak="0.95" data-out="2">
-      <div class="kick">Diesel, delivered treated</div>
-      <h2>The long road<br>is ours.</h2>
-      <div class="cta-row">
-        <a class="btn-gold" href="#cta">Start your enquiry</a>
-        <a class="btn-line" href="tel:+61738352460">+61 7 3835 2460</a>
-      </div>
     </div>
 
     <div id="handoff"></div>
@@ -1230,7 +1198,7 @@ footer{background:var(--film-deep);color:var(--ivory);padding:70px clamp(22px,6v
             <div class="row"><span class="calc-lbl" style="margin:0" id="gainLbl">Fuel economy gain</span><span class="val" id="gainVal">7%</span></div>
             <input type="range" id="calcGain" min="5" max="10" step="0.5" value="7" aria-labelledby="gainLbl">
           </div>
-          <p class="calc-note">Fyrex CI is rated at a <b>5&ndash;10%</b> fuel economy improvement. Move the slider to see your range.</p>
+          <p class="calc-note">We work on a <b>7%</b> fuel economy gain. Results above 7% are possible but shouldn&rsquo;t be expected. Move the slider to see your range.</p>
         </div>
 
         <!-- results -->
@@ -1268,7 +1236,7 @@ footer{background:var(--film-deep);color:var(--ivory);padding:70px clamp(22px,6v
 
           <p class="calc-note">
             Break-even: the additive pays for itself at anything under <b id="outBreakeven">$0.065</b> per litre treated.
-            Based on <b>2.72 kg CO<sub>2</sub>-e per litre</b> of diesel. An estimate from the figures you entered, not a quote.
+            Based on <b>2.71 kg CO<sub>2</sub>-e per litre</b> of diesel. An estimate from the figures you entered, not a quote.
           </p>
           <div class="calc-cta"><a class="btn-gold" href="#" data-drawer>Get this costed for your fleet</a></div>
         </div>
@@ -1414,13 +1382,14 @@ footer{background:var(--film-deep);color:var(--ivory);padding:70px clamp(22px,6v
 var PORTRAIT_FRAMES = false;      /* flip to true once assets/film2p/ holds the 9:16 masters (same count, same order) */
 var IS_PORTRAIT = window.matchMedia('(orientation: portrait)').matches && Math.min(screen.width, screen.height) <= 900;
 var FRAME_DIR = (PORTRAIT_FRAMES && IS_PORTRAIT) ? 'assets/film2p/' : 'assets/film2/';
-var FRAME_COUNT = 534;            /* THE GOLD LINE: 2 chapters at 24fps, film ends on the open road */
+var FRAME_START = 293;            /* skip the yard: the film now opens on f_0294, alongside the moving truck.
+                                     The yard frames stay on disk -- set this to 0 to bring them back. */
+var FRAME_COUNT = 534 - FRAME_START;  /* 241 frames at 24fps, ends on the open road */
 var FRAME_PAD = 4;
 var FRAME_VER = '24';              /* bump on every frame swap — busts cached 404s */
 var SEAM = '#4a3422';             /* sampled final-frame colour, set by assemble */
 var CHAPTERS = [
-  {at:0.00,    label:'01 — THE YARD'},
-  {at:0.5487, label:'02 — THE ROAD'}
+  {at:0.00, label:'01 — THE ROAD'}
 ];
 
 document.documentElement.style.setProperty('--seam', SEAM);
@@ -1438,39 +1407,54 @@ function sizeCanvas(){
 sizeCanvas();
 
 /* ---------- frame names ---------- */
-function fname(i){ var s = String(i+1); while (s.length < FRAME_PAD) s = '0' + s; return FRAME_DIR + 'f_' + s + '.jpg?v=' + FRAME_VER; }
+function fname(i){ var s = String(i + 1 + FRAME_START); while (s.length < FRAME_PAD) s = '0' + s; return FRAME_DIR + 'f_' + s + '.jpg?v=' + FRAME_VER; }
 
-/* ---------- loader pump (concurrency-capped) ---------- */
-var images = new Array(FRAME_COUNT), loadedCount = 0, PUMP = 10, pumpIdx = 0;
-var loaderEl = document.getElementById('loader'), barEl = document.querySelector('#loadbar i'), pctEl = document.getElementById('loadpct');
-var PREFETCH = Math.min(FRAME_COUNT, 140);   /* gate first paint on the opening run only */
+/* ---------- frame store (concurrency-capped) ----------
+   Frames are held as Blobs, not <img> elements. An <img> the browser has drawn keeps
+   a decoded copy alive (~3.5 MB each), so holding the film as images walked it into
+   memory and killed the renderer on a long scrub. A blob is just the 43 KB JPEG, so
+   the whole 241-frame film costs ~10 MB and can be held outright — which means
+   scrubbing back never re-fetches and never thrashes. Only the small decode window
+   below ever becomes pixels. */
+var frames = new Array(FRAME_COUNT), loadedCount = 0, PUMP = 10;
+var inFlight = 0;
 var gateDone = false;
 
+/* Nearest not-yet-fetched frame to the playhead, forward first. Fetching in file
+   order leaves you on a stale frame the moment you scroll past what has arrived. */
+function nextFrameToLoad(){
+  var c = (typeof target === 'number' && isFinite(target)) ? Math.round(target) : 0;
+  if (c < 0) c = 0; else if (c > FRAME_COUNT - 1) c = FRAME_COUNT - 1;
+  for (var d = 0; d < FRAME_COUNT; d++){
+    var f = c + d; if (f < FRAME_COUNT && frames[f] === undefined) return f;
+    var b = c - d; if (b >= 0 && frames[b] === undefined) return b;
+  }
+  return -1;
+}
+
 function pump(){
-  while (pumpIdx < FRAME_COUNT){
-    var inFlight = 0;
-    for (var j = 0; j < FRAME_COUNT; j++) if (images[j] === 'loading') inFlight++;
-    if (inFlight >= PUMP) return;
-    var i = pumpIdx++;
+  while (inFlight < PUMP){
+    var i = nextFrameToLoad();
+    if (i < 0) return;
+    frames[i] = 'loading'; inFlight++;
     (function(i){
-      var im = new Image(), tried = 0;
-      images[i] = 'loading';
-      im.onload = function(){ images[i] = im; loadedCount++; onLoad(i); pump(); };
-      im.onerror = function(){
-        if (++tried <= 2){ setTimeout(function(){ im.src = fname(i) + '&r=' + tried; }, 1200 * tried); return; }
-        images[i] = null; loadedCount++; onLoad(i); pump();
-      };
-      im.src = fname(i);
+      var tried = 0;
+      (function go(){
+        fetch(fname(i) + (tried ? '&r=' + tried : ''))
+          .then(function(r){ if (!r.ok) throw 0; return r.blob(); })
+          .then(function(b){ frames[i] = b; loadedCount++; inFlight--; onLoad(i); pump(); })
+          .catch(function(){
+            if (++tried <= 2){ setTimeout(go, 1200 * tried); return; }
+            frames[i] = null; loadedCount++; inFlight--; onLoad(i); pump();
+          });
+      })();
     })(i);
   }
 }
 function onLoad(){
-  var p = Math.min(1, loadedCount / PREFETCH);
-  barEl.style.width = (p * 100).toFixed(0) + '%';
-  pctEl.textContent = (p * 100).toFixed(0) + '%';
-  /* boot the moment the opening frame exists — the film starts on scene one, never on black */
-  if (!gateDone && (images[0] instanceof Image || loadedCount >= 40)){ gateDone = true; boot(); }
-  if (gateDone && loadedCount >= PREFETCH) loaderEl.classList.add('done');
+  /* boot the moment the opening frame exists — the film starts on scene one, never on black.
+     #stage carries that frame as a CSS background, so there is nothing to cover up first. */
+  if (!gateDone && (frames[0] instanceof Blob || loadedCount >= 40)){ gateDone = true; boot(); }
 }
 
 /* ---------- ImageBitmap sliding window ---------- */
@@ -1478,8 +1462,13 @@ var bitmaps = new Map(), decoding = new Set();
 /* memory budget: phones keep a much smaller decoded window than desktop */
 var SMALL = Math.min(screen.width, screen.height) <= 900;
 var FPS = 24;
-var B_AHEAD = SMALL ? 12 : Math.round(FPS * 2);
-var B_KEEP  = SMALL ? 14 : Math.round(FPS * 2.2);
+/* Decoded RGBA is ~3.5 MB a frame at 1280x726, so B_KEEP is the real memory dial:
+   the tab holds (B_KEEP * 2 + 1) bitmaps at once. Desktop used to sit at 53, which
+   is 107 frames = ~380 MB, and Edge killed the renderer on a long scrub. 16 keeps
+   33 frames = ~117 MB, close to the phone budget, and 8 parallel decodes refill
+   the window faster than a scroll can outrun it. */
+var B_AHEAD = SMALL ? 12 : 14;
+var B_KEEP  = SMALL ? 14 : 16;
 /* phones: ±14 kept bitmaps ≈ 100MB RGBA ceiling; iOS kills the tab near 200MB */
 var MAX_DECODING = SMALL ? 4 : 8;  /* cap parallel decodes so fast scrubs can't queue hundreds */
 var bmpCenter = -999;
@@ -1488,24 +1477,33 @@ function ensureBitmaps(center){
   if (Math.abs(center - bmpCenter) < 3) return;
   bmpCenter = center;
   var lo = Math.max(0, center - Math.round(B_AHEAD * 0.6)), hi = Math.min(FRAME_COUNT - 1, center + B_AHEAD);
-  for (var i = lo; i <= hi; i++){
-    if (decoding.size >= MAX_DECODING) break;
-    if (bitmaps.has(i) || decoding.has(i) || !(images[i] instanceof Image)) continue;
-    decoding.add(i);
-    (function(i){
-      createImageBitmap(images[i]).then(function(b){
-        decoding.delete(i);
-        if (Math.abs(i - bmpCenter) > B_KEEP){ b.close(); refill(); return; }
-        bitmaps.set(i, b);
-        if (i === displayed) drawFrame(i, true);
-        refill();
-      }).catch(function(){ decoding.delete(i); refill(); });
-    })(i);
+  /* work outward from the frame you are actually on, so scrubbing either way
+     decodes what is under the playhead before it fills the rest of the window */
+  var reach = Math.max(center - lo, hi - center);
+  for (var d = 0; d <= reach && decoding.size < MAX_DECODING; d++){
+    for (var k = 0; k < (d ? 2 : 1) && decoding.size < MAX_DECODING; k++){
+      var i = k ? center - d : center + d;
+      if (i < lo || i > hi) continue;
+      if (bitmaps.has(i) || decoding.has(i) || !(frames[i] instanceof Blob)) continue;
+      decoding.add(i);
+      (function(i){
+        createImageBitmap(frames[i]).then(function(b){
+          decoding.delete(i);
+          if (Math.abs(i - bmpCenter) > B_KEEP){ b.close(); refill(); return; }
+          bitmaps.set(i, b);
+          if (i === displayed) drawFrame(i, true);
+          refill();
+        }).catch(function(){ decoding.delete(i); refill(); });
+      })(i);
+    }
   }
+  /* the window moved, so re-aim the downloader at it too */
+  pump();
   bitmaps.forEach(function(b, k){
     if (k < center - B_KEEP || k > center + B_KEEP){ b.close(); bitmaps.delete(k); }
   });
 }
+
 /* re-enter the fill loop as decode slots free up (the cap breaks out early) */
 function refill(){
   if (decoding.size >= MAX_DECODING) return;
@@ -1513,16 +1511,12 @@ function refill(){
 }
 function nearestFrame(idx){
   if (bitmaps.has(idx)) return bitmaps.get(idx);
-  /* bitmaps only — drawing raw Images forces synchronous 1600px JPEG
-     decodes at scroll speed, which is what OOM-killed the tab on phones */
+  /* decoded bitmaps only. A blob cannot be drawn, and decoding one synchronously at
+     scroll speed is what used to stall the tab, so a cold start shows the CSS poster
+     on #stage until the first decode lands. */
   for (var d = 1; d < FRAME_COUNT; d++){
     if (bitmaps.has(idx - d)) return bitmaps.get(idx - d);
     if (bitmaps.has(idx + d)) return bitmaps.get(idx + d);
-  }
-  /* cold start only: no bitmap exists anywhere yet */
-  for (var e = 0; e < FRAME_COUNT; e++){
-    if (images[idx - e] instanceof Image) return images[idx - e];
-    if (images[idx + e] instanceof Image) return images[idx + e];
   }
   return null;
 }
@@ -1537,18 +1531,12 @@ function drawFrame(idx, force){
   var sCover = Math.max(cw / w, ch / h);
   var s, dx, dy;
   if (portrait){
-    /* phones: always fill the screen; per-chapter focus keeps the subject in the crop.
-       Yard (ch1, 0-0.5487): truck departing at left, hold on the cab (fx 0.16), then
-       ease right toward the gate (fx 0.40) as the truck recedes into the dust -- this
-       also steers clear of the tank's own wordmark sitting further right in frame.
-       Road (ch2): ease the rest of the way to centre, the truck is alone in frame. */
+    /* phones: always fill the screen. With the yard cut, every frame is road footage
+       and the truck is alone in the middle of it, so the crop just holds centre. */
     s = sCover;
     var dw0 = w * s, dh0 = h * s;
     var fx;
-    if (PORTRAIT_FRAMES && IS_PORTRAIT) fx = 0.5;                 /* true 9:16 masters: plain cover */
-    else if (progress < 0.5487) fx = 0.798;                           /* yard: hold on the FUEL 2 GO lockup */
-    else if (progress < 0.62) fx = 0.798 + (0.5 - 0.798) * (progress - 0.5487) / (0.62 - 0.5487);
-    else fx = 0.5;
+    fx = 0.5;                                                     /* truck is centre frame for the whole run */
     dx = Math.min(0, Math.max(cw - dw0, -(dw0 - cw) * fx));
     dy = (ch - dh0) / 2;
   } else {
@@ -1693,7 +1681,7 @@ document.querySelectorAll('.section').forEach(function(s){ io.observe(s); });
      litres needed = litres / (1 + gain)
      litres saved  = litres - litres/(1 + gain)
      money saved   = litres saved * price
-     CO2 avoided   = litres saved * 2.72 kg  (AU diesel direct combustion)
+     CO2 avoided   = litres saved * 2.71 kg  (AU diesel direct combustion)
    ------------------------------------------------------------------ */
 (function(){
   var elL = document.getElementById('calcLitres');
@@ -1702,7 +1690,7 @@ document.querySelectorAll('.section').forEach(function(s){ io.observe(s); });
       elGain  = document.getElementById('calcGain'),
       segM    = document.getElementById('segMonth'),
       segY    = document.getElementById('segYear'),
-      CO2_PER_L = 2.72;
+      CO2_PER_L = 2.71;
   var yearly = false;
 
 

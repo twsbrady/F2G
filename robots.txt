@@ -1,4 +1,4 @@
+# Fuel 2 Go is deliberately not advertising or listed for its first 12 months.
+# This site is sent to people directly, it is not a public website.
 User-agent: *
-Allow: /
-
-Sitemap: https://f2g-longroad.vercel.app/sitemap.xml
+Disallow: /

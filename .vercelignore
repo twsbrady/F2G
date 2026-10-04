@@ -1,0 +1,6 @@
+# Internal only - never publish these
+three-brain-out
+README.md
+.gitignore
+_variants.html
+_harness.html
