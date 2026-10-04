@@ -4,3 +4,5 @@ README.md
 .gitignore
 _variants.html
 _harness.html
+.env
+.env.*

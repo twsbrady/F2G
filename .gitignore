@@ -3,3 +3,7 @@
 .tmp/
 _harness.html
 _variants.html
+
+# never commit secrets
+.env
+.env.*
