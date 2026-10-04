@@ -1245,8 +1245,7 @@ footer{background:var(--film-deep);color:var(--ivory);padding:70px clamp(22px,6v
           </div>
 
           <p class="calc-note">
-            Break-even: the additive pays for itself at anything under <b id="outBreakeven">$0.065</b> per litre treated.
-            Based on <b>2.71 kg CO<sub>2</sub>-e per litre</b> of diesel. An estimate from the figures you entered, not a quote.
+            An estimate from the figures you entered, not a quote.
           </p>
           <div class="calc-cta"><a class="btn-gold" href="#" data-drawer>Get this costed for your fleet</a></div>
         </div>
@@ -1764,10 +1763,6 @@ document.querySelectorAll('.section').forEach(function(s){ io.observe(s); });
     setText('barTreatVal', fmt(treated) + ' L');
     var pct = litres > 0 ? (treated / litres) * 100 : 100;
     document.getElementById('barTreat').style.width = pct.toFixed(2) + '%';
-
-    /* break-even: what the additive may cost per treated litre and still pay */
-    var be = litres > 0 ? money / litres : 0;
-    setText('outBreakeven', '$' + be.toFixed(3));
 
     Array.prototype.forEach.call(document.querySelectorAll('.perLbl'), function(e){ e.textContent = 'per ' + per; });
     var pl = document.getElementById('periodLbl'); if (pl) pl.textContent = 'per ' + per;
