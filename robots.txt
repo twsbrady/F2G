@@ -1,4 +1,17 @@
 # Fuel 2 Go is deliberately not advertising or listed for its first 12 months.
-# This site is sent to people directly, it is not a public website.
+# This site is sent to people directly, it is not a public website, and the page itself
+# also says noindex. The bots below only fetch a page when someone shares its link, to
+# draw the preview card; they are not search engines and do not list the site.
+User-agent: facebookexternalhit
+User-agent: Facebot
+User-agent: Twitterbot
+User-agent: LinkedInBot
+User-agent: Slackbot
+User-agent: Slackbot-LinkExpanding
+User-agent: WhatsApp
+User-agent: TelegramBot
+User-agent: Discordbot
+Allow: /
+
 User-agent: *
 Disallow: /
