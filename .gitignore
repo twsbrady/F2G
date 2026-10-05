@@ -7,3 +7,6 @@ _variants.html
 # never commit secrets
 .env
 .env.*
+
+# local video backups, not for the repo
+*.mp4.bak
