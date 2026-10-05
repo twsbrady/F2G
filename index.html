@@ -1195,15 +1195,15 @@ footer{background:var(--film-deep);color:var(--ivory);padding:70px clamp(22px,6v
           </div>
 
           <div class="calc-slider">
-            <div class="row"><span class="calc-lbl" style="margin:0" id="priceLbl">Diesel price</span><span class="val" id="priceVal">$2.20</span></div>
-            <input type="range" id="calcPrice" min="1.40" max="3.20" step="0.01" value="2.20" aria-labelledby="priceLbl">
+            <div class="row"><span class="calc-lbl" style="margin:0" id="priceLbl">Diesel price</span><span class="val" id="priceVal">$2.85</span></div>
+            <input type="range" id="calcPrice" min="1.40" max="3.60" step="0.01" value="2.85" aria-labelledby="priceLbl">
           </div>
 
           <div class="calc-slider" style="margin-bottom:6px">
             <div class="row"><span class="calc-lbl" style="margin:0" id="gainLbl">Fuel economy gain</span><span class="val" id="gainVal">7%</span></div>
-            <input type="range" id="calcGain" min="5" max="10" step="0.5" value="7" aria-labelledby="gainLbl">
+            <input type="range" id="calcGain" min="5" max="9.9" step="0.1" value="7" aria-labelledby="gainLbl">
           </div>
-          <p class="calc-note">We work on a <b>7%</b> fuel economy gain. Results above 7% are possible but shouldn&rsquo;t be expected. Move the slider to see your range.</p>
+          <p class="calc-note">We work on a <b>7%</b> fuel economy gain, inside tested results of 5.3% to 9.9%. If you want to be conservative, run it at 5%. What you see depends on the work — a float on heavy haul and a crate on the highway don’t burn the same. Move the slider to see your range.</p>
         </div>
 
         <!-- results -->
@@ -1330,6 +1330,7 @@ footer{background:var(--film-deep);color:var(--ivory);padding:70px clamp(22px,6v
   <button class="drawer-close" data-drawer-close aria-label="Close">&times;</button>
   <div class="kick-c">Start your enquiry</div>
   <h3>Tell us what<br>you need.</h3>
+  <p class="lede2">Give us your monthly litres and how often you’d want delivery, and we’ll work out the tank to suit.</p>
 
   <form id="enqForm" novalidate>
     <input class="hp" type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -1362,7 +1363,7 @@ footer{background:var(--film-deep);color:var(--ivory);padding:70px clamp(22px,6v
     </label>
     <div class="fld-row">
       <label class="fld"><span>Diesel per month (L)</span><input type="text" name="volume" inputmode="numeric" placeholder="e.g. 40,000"></label>
-      <label class="fld"><span>Tank required</span><select name="tanks"><option value="">Select…</option><option>Yes</option><option>No</option><option>Not sure yet</option></select></label>
+      <label class="fld"><span>Delivery frequency</span><select name="tanks"><option value="">Select…</option><option>Weekly</option><option>Fortnightly</option><option>Monthly</option><option>Not sure yet</option></select></label>
     </div>
     <label class="fld"><span>Any comments</span><textarea name="message"></textarea></label>
     <button class="drawer-submit" type="submit">Send enquiry</button>
@@ -1833,7 +1834,7 @@ document.querySelectorAll('.section').forEach(function(s){ io.observe(s); });
     var d = new FormData(form), lines = [], payload = {};
     var labels = { name:'Name', company:'Company', phone:'Phone', email:'Email',
                    region:'State / region', product:'Requirement',
-                   volume:'Diesel per month (L)', tanks:'Tank required', message:'Comments' };
+                   volume:'Diesel per month (L)', tanks:'Delivery frequency', message:'Comments' };
     Object.keys(labels).forEach(function(k){
       var v = (d.get(k) || '').toString().trim();
       payload[k] = v;
