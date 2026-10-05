@@ -373,6 +373,9 @@ header.on-light .head-phone{text-shadow:none}
   --t-lamp:#FFF4DC; --t-outline:rgba(3,13,48,.55);
 }
 #how .run-track{position:relative;margin-top:-6px}
+/* on a narrow screen the heading wraps to two lines and that -6px drags the first
+   card onto it. give the timeline real air instead. */
+@media (max-width:620px){#how .run-track{margin-top:18px}}
 
 /* ---------- the road ---------- */
 #how .run-road{
