@@ -28,8 +28,8 @@ var FIELDS = [
   ['region',  'State / region',         40],
   ['product', 'Requirement',            80],
   ['volume',  'Diesel per month (L)',   40],
-  ['tanks',   'Tanks required',         20],
-  ['message', 'Notes',                2000]
+  ['tanks',   'Tank required',          20],
+  ['message', 'Comments',             2000]
 ];
 var REQUIRED = ['name', 'company', 'phone', 'email'];
 var EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
@@ -142,7 +142,7 @@ module.exports = async function handler(req, res) {
   var preview = [
     data.company ? data.name : '',
     data.volume ? data.volume + ' L a month' : '',
-    data.tanks ? data.tanks + (data.tanks === '1' ? ' tank' : ' tanks') : '',
+    data.tanks ? 'tank: ' + data.tanks.toLowerCase() : '',
     data.region, data.product
   ].filter(Boolean).join(' \u00B7 ') || 'New website enquiry';
   var pad = ''; for (var z = 0; z < 60; z++) pad += '&zwnj;&nbsp;';
@@ -151,7 +151,7 @@ module.exports = async function handler(req, res) {
   var glance = [
     ['Needs', data.product],
     ['Diesel a month', data.volume ? data.volume + ' L' : ''],
-    ['Tanks', data.tanks]
+    ['Tank required', data.tanks]
   ].filter(function (g) { return g[1]; });
   var glanceHtml = '';
   if (glance.length) {

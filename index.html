@@ -1330,7 +1330,6 @@ footer{background:var(--film-deep);color:var(--ivory);padding:70px clamp(22px,6v
   <button class="drawer-close" data-drawer-close aria-label="Close">&times;</button>
   <div class="kick-c">Start your enquiry</div>
   <h3>Tell us what<br>you need.</h3>
-  <p class="lede2">Volume and tank numbers let us come back with real pricing instead of a brochure.</p>
 
   <form id="enqForm" novalidate>
     <input class="hp" type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -1363,9 +1362,9 @@ footer{background:var(--film-deep);color:var(--ivory);padding:70px clamp(22px,6v
     </label>
     <div class="fld-row">
       <label class="fld"><span>Diesel per month (L)</span><input type="text" name="volume" inputmode="numeric" placeholder="e.g. 40,000"></label>
-      <label class="fld"><span>Tanks required</span><input type="text" name="tanks" inputmode="numeric" placeholder="e.g. 2"></label>
+      <label class="fld"><span>Tank required</span><select name="tanks"><option value="">Select…</option><option>Yes</option><option>No</option><option>Not sure yet</option></select></label>
     </div>
-    <label class="fld"><span>Anything else</span><textarea name="message" placeholder="Site location, delivery windows, timing…"></textarea></label>
+    <label class="fld"><span>Any comments</span><textarea name="message"></textarea></label>
     <button class="drawer-submit" type="submit">Send enquiry</button>
     <p class="drawer-alt">Prefer to talk? Call <a href="tel:+61738352460">+61 7 3835 2460</a> or email <a href="mailto:admin@fuel2go.com.au">admin@fuel2go.com.au</a>.</p>
   </form>
@@ -1834,7 +1833,7 @@ document.querySelectorAll('.section').forEach(function(s){ io.observe(s); });
     var d = new FormData(form), lines = [], payload = {};
     var labels = { name:'Name', company:'Company', phone:'Phone', email:'Email',
                    region:'State / region', product:'Requirement',
-                   volume:'Diesel per month (L)', tanks:'Tanks required', message:'Notes' };
+                   volume:'Diesel per month (L)', tanks:'Tank required', message:'Comments' };
     Object.keys(labels).forEach(function(k){
       var v = (d.get(k) || '').toString().trim();
       payload[k] = v;
