@@ -1330,7 +1330,7 @@ footer{background:var(--film-deep);color:var(--ivory);padding:70px clamp(22px,6v
   <button class="drawer-close" data-drawer-close aria-label="Close">&times;</button>
   <div class="kick-c">Start your enquiry</div>
   <h3>Tell us what<br>you need.</h3>
-  <p class="lede2">Give us your monthly litres and how often you’d want delivery, and we’ll work out the tank to suit.</p>
+  <p class="lede2">Let us know your monthly litres. We’ll come back with a delivery schedule and a tank size to suit, and we can work through it from there.</p>
 
   <form id="enqForm" novalidate>
     <input class="hp" type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -1361,10 +1361,7 @@ footer{background:var(--film-deep);color:var(--ivory);padding:70px clamp(22px,6v
         <option>Not sure yet</option>
       </select>
     </label>
-    <div class="fld-row">
-      <label class="fld"><span>Diesel per month (L)</span><input type="text" name="volume" inputmode="numeric" placeholder="e.g. 40,000"></label>
-      <label class="fld"><span>Delivery frequency</span><select name="tanks"><option value="">Select…</option><option>Weekly</option><option>Fortnightly</option><option>Monthly</option><option>Not sure yet</option></select></label>
-    </div>
+    <label class="fld"><span>Diesel per month (L)</span><input type="text" name="volume" inputmode="numeric" placeholder="e.g. 40,000"></label>
     <label class="fld"><span>Any comments</span><textarea name="message"></textarea></label>
     <button class="drawer-submit" type="submit">Send enquiry</button>
     <p class="drawer-alt">Prefer to talk? Call <a href="tel:+61738352460">+61 7 3835 2460</a> or email <a href="mailto:admin@fuel2go.com.au">admin@fuel2go.com.au</a>.</p>
@@ -1372,7 +1369,7 @@ footer{background:var(--film-deep);color:var(--ivory);padding:70px clamp(22px,6v
 
   <div id="drawerDone" role="status" aria-live="polite">
     <h4 id="doneTitle">Thanks, we have it</h4>
-    <p id="doneMsg">Your enquiry is with the team. We will come back to you with pricing built around your volume and tanks.</p>
+    <p id="doneMsg">Your enquiry is with the team. We will come back to you with pricing, a delivery schedule and a tank size to suit your volume.</p>
     <p class="done-call">In a hurry? Call <a href="tel:+61738352460">+61 7 3835 2460</a>.</p>
     <div id="doneFallback" hidden>
       <textarea id="drawerText" readonly aria-label="Your enquiry, ready to copy"></textarea>
@@ -1834,7 +1831,7 @@ document.querySelectorAll('.section').forEach(function(s){ io.observe(s); });
     var d = new FormData(form), lines = [], payload = {};
     var labels = { name:'Name', company:'Company', phone:'Phone', email:'Email',
                    region:'State / region', product:'Requirement',
-                   volume:'Diesel per month (L)', tanks:'Delivery frequency', message:'Comments' };
+                   volume:'Diesel per month (L)', message:'Comments' };
     Object.keys(labels).forEach(function(k){
       var v = (d.get(k) || '').toString().trim();
       payload[k] = v;

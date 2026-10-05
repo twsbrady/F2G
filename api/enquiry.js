@@ -28,7 +28,6 @@ var FIELDS = [
   ['region',  'State / region',         40],
   ['product', 'Requirement',            80],
   ['volume',  'Diesel per month (L)',   40],
-  ['tanks',   'Delivery frequency',     20],
   ['message', 'Comments',             2000]
 ];
 var REQUIRED = ['name', 'company', 'phone', 'email'];
@@ -142,7 +141,6 @@ module.exports = async function handler(req, res) {
   var preview = [
     data.company ? data.name : '',
     data.volume ? data.volume + ' L a month' : '',
-    data.tanks || '',
     data.region, data.product
   ].filter(Boolean).join(' \u00B7 ') || 'New website enquiry';
   var pad = ''; for (var z = 0; z < 60; z++) pad += '&zwnj;&nbsp;';
@@ -151,7 +149,6 @@ module.exports = async function handler(req, res) {
   var glance = [
     ['Needs', data.product],
     ['Diesel a month', data.volume ? data.volume + ' L' : ''],
-    ['Delivery', data.tanks]
   ].filter(function (g) { return g[1]; });
   var glanceHtml = '';
   if (glance.length) {
